@@ -1,0 +1,197 @@
+{% load static %}
+{% load bootstrap5 %}
+{% load bootstrap_icons %}
+<!DOCTYPE html>
+<html lang="en" class="wide wow-animation">
+  <head>
+    <!-- Site Title-->
+	<title>{{pagename}}</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <script src="https://use.fontawesome.com/6367493b92.js"></script>
+    <script src="{% static '/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js' %}"></script><link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <!-- Stylesheets-->
+    {% block style %}
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:300,400italic,400,500">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+		<![endif]-->
+    {% endblock %}
+  </head>
+  <body>
+    <!-- Page-->
+    <div class="page">
+      <!-- Page Header-->
+      <header class="page-head undefined">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap header-default">
+          <nav class="rd-navbar" data-stick-up-offset="245px" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fullwidth" data-md-layout="rd-navbar-fullwidth" data-md-device-layout="rd-navbar-fullwidth" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
+            <div class="rd-navbar-top-panel">
+              <div class="rd-navbar-top-panel-wrap">
+                <button data-rd-navbar-toggle=".list-inline" type="submit" class="rd-navbar-collapse-toggle"><span></span></button>
+                <p><span> Спорт янгиликлари марказимизга</span> хуш келибсиз!</p>
+                <div class="block-right">
+                  <ul class="list-inline">
+                    <li class="activePage"><a href="{% url 'home' %}">Бош сахифа</a></li>
+                    <li><a href="about.html">Биз ҳақимизда</a></li>
+                    <li><a href="contact.html">Контакт</a></li>
+                    <!-- RD Navbar Search-->
+                  </ul>
+                  <div class="rd-navbar-search">
+                    <form action="search.php" method="GET" class="rd-navbar-search-form">
+                      <label class="rd-navbar-search-form-input">
+                        <input type="text" name="s" placeholder="Кидирув..." autocomplete="off">
+                      </label>
+                      <button type="submit" class="rd-navbar-search-form-submit"></button>
+                    </form>
+                    <!--span.rd-navbar-live-search-results-->
+                    <button data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar-live-search-results" type="submit" class="rd-navbar-search-toggle"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button data-rd-navbar-toggle=".rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div class="rd-navbar-brand"><a href="index.html" class="brand-name"><span class="text-bold">&lsquo;daily</span><span>sports</span><span class="brand-slogan">The latest sports news</span></a></div>
+                <div class="block-banner"><a href="#"><span>Banner space 728X90</span><img src="{% static 'images/index-1.jpg' %}" alt="" width="728" height="90"></a></div>
+                <ul class="list-inline-variant-1">
+                  <li><a href="#" class="fa-facebook"></a></li>
+                  <li><a href="#" class="fa-twitter"></a></li>
+                  <li><a href="#" class="fa-google-plus"></a></li>
+                  <li><a href="#" class="fa-youtube"></a></li>
+                </ul>
+              </div>
+              <div class="rd-navbar-nav-wrap">
+                <ul class="rd-navbar-nav clearfix">
+                  <li><a href="{% url 'home' %}">Бош сахифа</a>
+                    <!-- RD Navbar Dropdown-->
+                    <!-- <ul class="rd-navbar-dropdown">
+                      <li><a href="" onclick="return false">Categories Layout</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="categories_grid.html">Categories Grid</a></li>
+                          <li><a href="categories_masonry.html">Categories Masonry</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="" onclick="return false">Post layout</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="blog_post.html">Post Default</a></li>
+                          <li><a href="post-slider.html">Post Slider</a></li>
+                          <li><a href="post-video.html">Post Video</a></li>
+                          <li><a href="post-audio.html">Post Audio</a></li>
+                          <li><a href="post-link.html">Post Link</a></li>
+                          <li><a href="post-quote.html">Post Quote</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="" onclick="return false">Header Settings</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="index.html">Default Header</a></li>
+                          <li><a href="header-cent.html">Center Header</a></li>
+                          <li><a href="header-fullwidth.html">Fullwidth Header</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="" onclick="return false">Footer Settings</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="footer_1.html">Footer Style 1</a></li>
+                          <li><a href="footer_2.html">Footer Style 2</a></li>
+                          <li><a href="footer_3.html">Footer Style 3</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="" onclick="return false">Sidebar Settings</a>
+                        <ul class="rd-navbar-dropdown">
+                          <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                          <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                          <li><a href="no-sidebar.html">No Sidebar</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="typography.html">Typography</a></li>
+                      <li><a href="404.html">404</a></li>
+                    </ul>
+                  </li> -->
+                  <li><a href="{% url 'category' %}"> Футбол</a></li>
+                  <li><a href="basketball.html">Хоккей</a></li>
+                  <li><a href="soccer.html">Бокс</a></li>
+                  <li><a href="motorsport.html">UFC</a></li>
+                  <li><a href="olympics.html">Воллейбол</a></li>
+                  <li><a href="other.html">Other Sports</a></li>
+                  <li>
+                    <ul class="list-inline-variant-1">
+                      <li><a href="#" class="fa-facebook"></a></li>
+                      <li><a href="#" class="fa-twitter"></a></li>
+                      <li><a href="#" class="fa-google-plus"></a></li>
+                      <li><a href="#" class="fa-youtube"></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      {% block content %}
+      
+      {% endblock %}
+      <!-- Page Footer-->
+      <footer class="page-foot section-top-38">
+        <div class="container">
+          <div class="row clearleft-custom">
+            <div class="col-xs-6 col-sm-6 col-md-2">
+              <h4>Категориялар</h4>
+              <ul class="list-variant-1">
+                <li><a href="categories.html">breaking news</a></li>
+                <li><a href="basketball.html">basketball</a></li>
+                <li><a href="soccer.html">soccer</a></li>
+                <li><a href="motorsport.html">motorsports</a></li>
+                <li><a href="olympics.html">olympics</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-2">
+              <h4>Маълумот</h4>
+              <ul class="list-variant-1">
+                <li><a href="about.html">Биз хакимизда</a></li>
+                <li><a href="contact.html">Контакт</a></li>
+                <li><a href="terms.html">Editorial policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <h4>Теглар</h4>
+                <div class="tag-group">
+                  {% for i in tag|slice:":10" %}
+                <a href="#" class="tag">{{i.word}}</a>
+                {% endfor %}
+            </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <h4>Бизга кушилинг</h4>
+              <h5>ХАБАРЛАРГА ОБУНА БУЛИНГ!</h5>
+              <p>Эмаилингизни киритинг ва кунлик янгиликларни почта оркали олинг!</p>
+              <!-- Rd Mailform result field-->
+              <div class="rd-mailform-validate"></div>
+              <!-- RD Mailform-->
+              <form data-result-class="rd-mailform-validate" data-form-type="subscribe" method="post" action="bat/rd-mailform.php" class="rd-mailform subscribe text-left">
+                <input type="text" name="email" data-constraints="@NotEmpty @Email" placeholder="Your e-mail">
+                <button class="btn btn-primary">Обуна булиш</button>
+              </form>
+            </div>
+          </div>
+          <div class="copyright border">
+            <div class="rd-navbar-brand"><a href="index.html" class="brand-name"><span class="text-bold">&lsquo;daily</span><span>sports</span></a></div>
+            <p>&#169; &nbsp;<span id="copyright-year"></span> 'Daily Sports. All Rights Reserved</p>
+          </div>
+        </div>
+      </footer>
+      <!-- {%FOOTER_LINK}-->
+    </div>
+    <!-- Java script-->
+    <script src="{% static 'js/core.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager -->

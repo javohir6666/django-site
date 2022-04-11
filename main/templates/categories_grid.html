@@ -1,0 +1,537 @@
+      {% extends 'base.html' %}
+      {% load static %}
+      {% block content %}
+      <!-- Page Content-->
+      <main class="page-content">
+        <section>
+          <div class="container">
+            <ol class="breadcrumb">
+              <li><a href="index.html">home</a></li>
+              <li class="active">categories grid</li>
+            </ol>
+          </div>
+        </section>
+        <!--Section Main Content-->
+        <section class="section-bottom-50">
+          <div class="container">
+            <div class="row">
+              <!--Section News-->
+              <div class="col-xs-12 col-lg-8">
+                <h4>news<span class="text-primary"> (grid)</span></h4>
+                <div class="row flow-offset-1 clearleft-custom-1">
+                  {% for i in news %}
+                  <div class="col-sm-6">
+                    <div class="blog-post-variant-8 min-height bg-dark">
+                      <div class="post-img">{% if i.image_image %}<img src="{{ i.image_image.url }}" style="height:250px;" alt="{{i.title}}">{% endif %}<a href="blog_post.html" class="tag bg-primary">{{i.category}}</a></div>
+                      <div class="post-body bg-dark">
+                        <div class="post-title"><a href="{% url 'post_detail' i.pk %}" class="h5">{{i.title}}</a>
+                          <p>{{ i.detail|slice:":100" }}...</p>
+                        </div>
+                        <div class="post-meta">
+                          <i class="fa-eye"> {{i.post_viewcount}} </i>
+                          <p>posted by <a href="blog_post.html">Jason Parker</a> &bull;
+                            <time datetime="2016"><a href="blog_post.html">{{i.add_time}}</a></time>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="post-footer">
+                        <div class="post-meta"><a href="blog_post.html" class="btn btn-sm btn-transparent">Батафсил</a>
+                          <div class="post-share"><span class="icon icon-primary material-icons-share icon-sm icon-share"></span>
+                            <ul class="list-share">
+                              <li><a href="#" class="fa-facebook"></a></li>
+                              <li><a href="#" class="fa-twitter"></a></li>
+                              <li><a href="#" class="fa-google-plus"></a></li>
+                              <li><a href="#" class="fa-youtube"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                  <div class="col-sm-6">
+                    <div class="blog-post-variant-8 min-height bg-dark">
+                      <div class="post-img">
+                        <!-- Owl Carousel-->
+                        <div data-items="1" data-xs-items="1" data-lg-items="1" data-stage-padding="0" data-loop="true" data-margin="0" data-nav="true" class="owl-carousel">
+                          <div class="owl-item"><img src="images/categories-2.jpg" alt=""><a href="blog_post.html" class="tag bg-green">tennis</a></div>
+                          <div class="owl-item"><img src="images/categories-1.jpg" alt=""><a href="blog_post.html" class="tag bg-green">tennis</a></div>
+                          <div class="owl-item"><img src="images/categories-3.jpg" alt=""><a href="blog_post.html" class="tag bg-green">tennis</a></div>
+                        </div><a href="blog_post.html" class="tag bg-green">nfl</a>
+                      </div>
+                      <div class="post-body bg-dark">
+                        <div class="post-title"><a href="post-slider.html" class="h5">Manuel Pellegrini Admits Manchester City Quit</a>
+                          <p>Watch highlights of England's 129-run victory over Zimbabwe in their Under-19 World Cup group C game in Chittagong.</p>
+                        </div>
+                        <div class="post-meta">
+                          <p>posted by <a href="post-slider.html">Carol Adams</a> &bull;
+                            <time datetime="2016"><a href="post-slider.html">Jan. 20, 2016</a></time>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="post-footer">
+                        <div class="post-meta"><a href="post-slider.html" class="btn btn-sm btn-transparent">Read more</a>
+                          <div class="post-share"><span class="icon icon-primary material-icons-share icon-sm icon-share"></span>
+                            <ul class="list-share">
+                              <li><a href="#" class="fa-facebook"></a></li>
+                              <li><a href="#" class="fa-twitter"></a></li>
+                              <li><a href="#" class="fa-google-plus"></a></li>
+                              <li><a href="#" class="fa-youtube"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="blog-post-variant-8 min-height bg-dark">
+                      <div class="post-img">
+                        <!-- Magnific Popup--><a data-lightbox="iframe" href="//www.youtube.com/watch?v=-AhmuMqZB0s" class="thumb"><img src="images/categories-3.jpg" alt=""></a><a href="post-video.html" class="tag bg-green">nfl</a>
+                      </div>
+                      <div class="post-body bg-dark">
+                        <div class="post-title"><a href="post-video.html" class="h5">Manuel Pellegrini Admits Manchester City Quit</a>
+                          <p>Watch highlights of England's 129-run victory over Zimbabwe in their Under-19 World Cup group C game in Chittagong.</p>
+                        </div>
+                        <div class="post-meta">
+                          <p>posted by <a href="post-video.html">Sharon Wright</a> &bull;
+                            <time datetime="2016"><a href="post-video.html">Apr. 05, 2016</a></time>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="post-footer">
+                        <div class="post-meta"><a href="post-video.html" class="btn btn-sm btn-transparent">Read more</a>
+                          <div class="post-share"><span class="icon icon-primary material-icons-share icon-sm icon-share"></span>
+                            <ul class="list-share">
+                              <li><a href="#" class="fa-facebook"></a></li>
+                              <li><a href="#" class="fa-twitter"></a></li>
+                              <li><a href="#" class="fa-google-plus"></a></li>
+                              <li><a href="#" class="fa-youtube"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="blog-post-variant-8 min-height bg-dark">
+                      <div class="post-img"><img src="images/categories-4.jpg" alt=""><a href="post-link.html" class="tag bg-primary">nfl</a><a href="https://www.templatemonster.com/" target="_blank" class="link">https://www.templatemonster.com/</a></div>
+                      <div class="post-body bg-dark">
+                        <div class="post-title"><a href="post-link.html" class="h5">Manuel Pellegrini Admits Manchester City Quit</a>
+                          <p>Watch highlights of England's 129-run victory over Zimbabwe in their Under-19 World Cup group C game in Chittagong.</p>
+                        </div>
+                        <div class="post-meta">
+                          <p>posted by <a href="post-link.html">Richard Phillips</a> &bull;
+                            <time datetime="2016"><a href="post-link.html">Jan. 20, 2016</a></time>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="post-footer">
+                        <div class="post-meta"><a href="post-link.html" class="btn btn-sm btn-transparent">Read more</a>
+                          <div class="post-share"><span class="icon icon-primary material-icons-share icon-sm icon-share"></span>
+                            <ul class="list-share">
+                              <li><a href="#" class="fa-facebook"></a></li>
+                              <li><a href="#" class="fa-twitter"></a></li>
+                              <li><a href="#" class="fa-google-plus"></a></li>
+                              <li><a href="#" class="fa-youtube"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="blog-post-variant-8 min-height bg-dark">
+                      <div class="post-body bg-dark"><a href="blog_post.html" class="tag bg-crusta">nfl</a>
+                        <div class="post-title"><a href="blog_post.html" class="h5">GOLDEN STATE WARRIORS 116 - NEW YORK KNICKS 95</a>
+                          <p>Klay Thompson brought back the Warriors from their slowest start of the season with 17 of his 34 points in the second quarter. Meanwhile Draymond Green tied the franchise record with his ninth triple-double of the season, and Golden State beat the New York Knicks 116-95 on Sunday night for its seventh victory in a row. Green made all nine shots as the Warriors (44-4) wrapped up January at 40 games over. 500 even with "modest" 13 points from Stephen Curry. He was effective with just 5 for 17 from the field on a court where he previously gave pretty good performances.</p>
+                        </div>
+                        <div class="post-meta">
+                          <p>posted by <a href="blog_post.html">Stuart Garibaldi</a> &bull;
+                            <time datetime="2016"><a href="blog_post.html">Jan. 20, 2016</a></time>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="post-footer">
+                        <div class="post-meta"><a href="blog_post.html" class="btn btn-sm btn-transparent">Read more</a>
+                          <div class="post-share"><span class="icon icon-primary material-icons-share icon-sm icon-share"></span>
+                            <ul class="list-share">
+                              <li><a href="#" class="fa-facebook"></a></li>
+                              <li><a href="#" class="fa-twitter"></a></li>
+                              <li><a href="#" class="fa-google-plus"></a></li>
+                              <li><a href="#" class="fa-youtube"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="blog-post-variant-8 min-height bg-dark">
+                      <div class="post-body">
+                        <blockquote class="quote-1 bg-primary">
+                          <p>
+                            <q>NBA legend Talks Bad the Number One Recruit in the Country</q>
+                          </p>
+                          <p><a href="post-quote.html">
+                              <cite>Jason Parker</cite></a></p>
+                        </blockquote>
+                        <div class="post-title">
+                          <p>Watch highlights of England's 129-run victory over Zimbabwe in their Under-19 World Cup group C game in Chittagong.</p>
+                        </div>
+                        <div class="post-meta">
+                          <p>posted by <a href="post-quote.html">Carol Adams</a> &bull;
+                            <time datetime="2016"><a href="post-quote.html">Jan. 20, 2016</a></time>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="post-footer">
+                        <div class="post-meta"><a href="post-quote.html" class="btn btn-sm btn-transparent">Read more</a>
+                          <div class="post-share"><span class="icon icon-primary material-icons-share icon-sm icon-share"></span>
+                            <ul class="list-share">
+                              <li><a href="#" class="fa-facebook"></a></li>
+                              <li><a href="#" class="fa-twitter"></a></li>
+                              <li><a href="#" class="fa-google-plus"></a></li>
+                              <li><a href="#" class="fa-youtube"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="blog-post-variant-8 min-height bg-dark">
+                      <div class="post-body bg-dark"><a href="post-audio.html" class="tag bg-primary">nfl</a>
+                        <div class="post-title"><a href="post-audio.html" class="h5">Manuel Pellegrini Admits Manchester City Quit</a>
+                          <audio src="audio/betkhoven-k-jelize.mp3" controls class="audio"></audio>
+                          <p>Watch highlights of England's 129-run victory over Zimbabwe in their Under-19 World Cup group C game in Chittagong.</p>
+                        </div>
+                        <div class="post-meta">
+                          <p>posted by <a href="post-audio.html">Sharon Wright</a> &bull;
+                            <time datetime="2016"><a href="post-audio.html">Apr. 05, 2016</a></time>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="post-footer">
+                        <div class="post-meta"><a href="post-audio.html" class="btn btn-sm btn-transparent">Read more</a>
+                          <div class="post-share"><span class="icon icon-primary material-icons-share icon-sm icon-share"></span>
+                            <ul class="list-share">
+                              <li><a href="#" class="fa-facebook"></a></li>
+                              <li><a href="#" class="fa-twitter"></a></li>
+                              <li><a href="#" class="fa-google-plus"></a></li>
+                              <li><a href="#" class="fa-youtube"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="blog-post-variant-8 min-height bg-dark">
+                      <div class="post-body">
+                        <div class="post-title"><a href="blog_post.html" class="h5">twitter status post</a></div>
+                        <!--Twitter--><a href="https://twitter.com/templatemonster" data-widget-id="721950285980180480" data-chrome="nofooter noborders noscrollbar noheader transparent" data-tweet-limit="1" data-link-color="#3ec0e1" class="twitter-timeline twitter-wjs">Tweets by @templatemonster</a>
+                        <div class="post-meta">
+                          <p>posted by <a href="blog_post.html">Richard Phillips</a> &bull;
+                            <time datetime="2016"><a href="blog_post.html">Jan. 01, 2016</a></time>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="post-footer">
+                        <div class="post-meta">
+                          <div class="post-share"><span class="icon icon-primary material-icons-share icon-sm icon-share"></span>
+                            <ul class="list-share">
+                              <li><a href="#" class="fa-facebook"></a></li>
+                              <li><a href="#" class="fa-twitter"></a></li>
+                              <li><a href="#" class="fa-google-plus"></a></li>
+                              <li><a href="#" class="fa-youtube"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="blog-post-variant-8 min-height bg-dark">
+                      <div class="post-body">
+                        <div class="post-title"><a href="blog_post.html" class="h5">facebook status post</a>
+                          <div class="fb-page-responsive">
+                            <div data-href="https://www.facebook.com/TemplateMonster" data-tabs="timeline" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" class="fb-page">
+                              <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="https://www.facebook.com/TemplateMonster"><a href="https://www.facebook.com/TemplateMonster">TemplateMonster</a></blockquote>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="post-meta">
+                          <p>posted by <a href="blog_post.html">Victor Pitcher</a> &bull;
+                            <time datetime="2016"><a href="blog_post.html">Feb. 28, 2016</a></time>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="post-footer">
+                        <div class="post-meta">
+                          <div class="post-share"><span class="icon icon-primary material-icons-share icon-sm icon-share"></span>
+                            <ul class="list-share">
+                              <li><a href="#" class="fa-facebook"></a></li>
+                              <li><a href="#" class="fa-twitter"></a></li>
+                              <li><a href="#" class="fa-google-plus"></a></li>
+                              <li><a href="#" class="fa-youtube"></a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 offset-top-30">
+                    <div class="bg-gray">
+                      <nav class="block-inline">
+                        <ul class="pagination">
+                          <li class="active"><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                        </ul>
+                      </nav>
+                      <nav class="nav-arrows pull-right clearfix">
+                        <div class="nav-prev"></div>
+                        <div class="nav-next"></div>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Sidebar-->
+              <div class="col-xs-12 col-lg-4">
+                <div class="sidebar display-5">
+                  <div class="sidebar-module">
+                    <h4>follow us</h4>
+                    <div class="wrap border-mandy">
+                      <h5>Sports news on social networks</h5>
+                      <p>Be up-to-date with your fav sports events via Facebook, Twitter & more!</p>
+                      <ul class="list-inline-variant-1">
+                        <li><a href="#" class="fa-facebook"></a></li>
+                        <li><a href="#" class="fa-twitter"></a></li>
+                        <li><a href="#" class="fa-google-plus"></a></li>
+                        <li><a href="#" class="fa-youtube"></a></li>
+                      </ul>
+                    </div>
+                    <div class="wrap bg-gray">
+                      <h5>Sign up for sports updates!</h5>
+                      <p>Give us your email and you will be daily updated with latest sports events, in detail!</p>
+                      <!-- Rd Mailform result field-->
+                      <div class="rd-mailform-validate"></div>
+                      <!-- RD Mailform-->
+                      <form data-result-class="rd-mailform-validate" data-form-type="subscribe" method="post" action="bat/rd-mailform.php" class="rd-mailform subscribe">
+                        <input type="text" name="email" data-constraints="@NotEmpty @Email" placeholder="Your e-mail">
+                        <button class="btn btn-primary btn-sm full-width">Subscribe</button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>recent sports events</h4>
+                    <div class="border-green">
+                      <div class="blog-post-variant-3">
+                        <div class="post-img"><img src="images/sidebar-1.jpg" alt=""/></div>
+                        <div class="post-body bg-dark">
+                          <div class="post-body-inside bg-dark">
+                            <div class="post-title">
+                              <h6><a href="blog_post.html" class="text-uppercase">Australian Open 2016: Federer Looms Large for Djokovic in...</a></h6>
+                            </div><a href="blog_post.html" class="btn btn-icon-sm btn-transparent"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="blog-post-variant-3">
+                        <div class="post-img"><img src="images/sidebar-2.jpg" alt=""/></div>
+                        <div class="post-body bg-gray">
+                          <div class="post-body-inside bg-gray">
+                            <div class="post-title">
+                              <h6><a href="blog_post.html" class="text-uppercase">Undefeated HS Wrestler Throws Match to Opponent with Special...</a></h6>
+                            </div><a href="blog_post.html" class="btn btn-icon-sm btn-transparent"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="blog-post-variant-3">
+                        <div class="post-img"><img src="images/sidebar-3.jpg" alt=""/></div>
+                        <div class="post-body bg-dark">
+                          <div class="post-body-inside bg-dark">
+                            <div class="post-title">
+                              <h6><a href="blog_post.html" class="text-uppercase">Panthers Say Manning Hasn`t Lost a Thing</a></h6>
+                            </div><a href="blog_post.html" class="btn btn-icon-sm btn-transparent"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>latest tweets</h4>
+                    <div class="border-tultip"><a href="https://twitter.com/templatemonster" data-widget-id="721950285980180480" data-chrome="nofooter noborders noscrollbar noheader transparent" data-tweet-limit="3" data-link-color="#3ec0e1" class="twitter-timeline twitter-wjs">Tweets by @templatemonster</a></div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>most watched videos</h4>
+                    <div class="border-primary">
+                      <div class="blog-post-variant-3">
+                        <div class="post-img"><img src="images/sidebar-4.jpg" alt=""/></div>
+                        <div class="post-body bg-dark">
+                          <div class="post-body-inside bg-dark">
+                            <div class="post-title">
+                              <h6><a href="blog_post.html" class="text-uppercase">LAAX Open 2016 - Halfpipe</a></h6>
+                              <time datetime="2016"><a href="blog_post.html"></a></time>
+                            </div><a href="blog_post.html" class="btn btn-icon-sm btn-icon-play btn-transparent"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="blog-post-variant-3">
+                        <div class="post-img"><img src="images/sidebar-5.jpg" alt=""/></div>
+                        <div class="post-body bg-gray">
+                          <div class="post-body-inside bg-gray">
+                            <div class="post-title">
+                              <h6><a href="blog_post.html" class="text-uppercase">Rallye Monte Carlo 2016: Stage 1</a></h6>
+                              <time datetime="2016"><a href="blog_post.html"></a></time>
+                            </div><a href="blog_post.html" class="btn btn-icon-sm btn-icon-play btn-transparent"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="blog-post-variant-3">
+                        <div class="post-img"><img src="images/sidebar-6.jpg" alt=""/></div>
+                        <div class="post-body bg-dark">
+                          <div class="post-body-inside bg-dark">
+                            <div class="post-title">
+                              <h6><a href="blog_post.html" class="text-uppercase">Gossip Column Euro: Transfer Deadline Day Round-up</a></h6>
+                              <time datetime="2016"><a href="blog_post.html"></a></time>
+                            </div><a href="blog_post.html" class="btn btn-icon-sm btn-icon-play btn-transparent"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>recent comments</h4>
+                    <div class="border-green">
+                      <blockquote class="quote-2 bg-dark">
+                        <p>
+                          <cite><a href="blog_post.html">Stuart Garibaldi</a></cite> <span>on</span>
+                        </p>
+                        <p>
+                          <q>Adidas to Kill Off IAAF Sponsorship Deal</q>
+                        </p>
+                      </blockquote>
+                      <blockquote class="quote-2 bg-gray">
+                        <p>
+                          <cite><a href="blog_post.html">Stuart Garibaldi</a></cite> <span>on</span>
+                        </p>
+                        <p>
+                          <q>West Ham Signs Forward Emenike on Loan from Fenerbahce</q>
+                        </p>
+                      </blockquote>
+                      <blockquote class="quote-2 bg-dark">
+                        <p>
+                          <cite><a href="blog_post.html">Stuart Garibaldi</a></cite> <span>on</span>
+                        </p>
+                        <p>
+                          <q>West Ham Signs Forward Emenike on Loan from Fenerbahce</q>
+                        </p>
+                      </blockquote>
+                    </div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>search</h4>
+                    <div class="wrap-1 border-mandy relative bg-gray">
+                      <!-- RD Navbar Search-->
+                      <div class="rd-navbar-search-mod-1">
+                        <form>
+                          <label>
+                            <input type="text" placeholder="Enter keyword" autocomplete="off">
+                          </label>
+                          <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>about</h4>
+                    <div class="wrap border-tultip">
+                      <h5>About Daily Sports</h5>
+                      <p>The Daily Sports is a fully digital sports news source. Yet we have a big, dedicated team of professional sports writers, who attend the biggest live sports events in US and around the world.</p>
+                      <p>Their unique reporting as well as our office-based analytics for sports breaking news make "The Daily Sports" an ultimate destination of all!</p><a href="about.html" class="btn btn-primary btn-sm">Read more</a>
+                    </div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>facebook</h4>
+                    <div class="wrap border-primary">
+                      <div id="fb-root"></div>
+                      <!-- Facebook Feed-->
+                      <div class="fb-page-responsive">
+                        <div data-href="https://www.facebook.com/TemplateMonster" data-tabs="timeline" data-height="217" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" class="fb-page">
+                          <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="https://www.facebook.com/TemplateMonster"><a href="https://www.facebook.com/TemplateMonster">TemplateMonster</a></blockquote>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sidebar-module clearfix">
+                    <h4>instagram</h4>
+                    <div class="border-green"><!-- RD Instafeed-->
+                      <div data-instafeed-clientid="44f19408f04040bd85214315861a84a1" data-instafeed-get="user" data-instafeed-user="499522078" class="instafeed element-groups-xs-custom">
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                        <div data-instafeed-item=""><a href="#" data-link="href" target="_blank" class="img-thumbnail-variant-3"><img src="images/_blank.png" alt="" data-images-thumbnail-url="src" width="74" height="74"></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>categories</h4>
+                    <div class="wrap border-primary">
+                      <ul class="list-variant-1">
+                        <li><a href="categories.html">breaking News</a></li>
+                        <li><a href="basketball.html">baseball</a></li>
+                        <li><a href="basketball.html">basketball</a></li>
+                        <li><a href="soccer.html">soccer</a></li>
+                        <li><a href="motorsport.html">motorsports</a></li>
+                        <li><a href="olympics.html">olympics</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>tag</h4>
+                    <div class="wrap border-mandy bg-gray">
+                      <div class="tag-group"><a href="#" class="tag">tennis</a><a href="#" class="tag">breaking news</a><a href="#" class="tag">baseball</a><a href="#" class="tag">soccer</a><a href="#" class="tag">motorsports</a><a href="#" class="tag">olympics</a><a href="#" class="tag">nba</a><a href="#" class="tag">travel</a><a href="#" class="tag">rally</a><a href="#" class="tag">news</a></div>
+                    </div>
+                  </div>
+                  <div class="sidebar-module">
+                    <h4>calendar</h4>
+                    <div class="wrap border-tultip bg-gray">
+                      <!-- RD Calendar-->
+                      <div class="rd-calendar">
+                        <div class="rdc-panel">
+                          <div class="rdc-month h5"></div>
+                          <div class="rdc-fullyear h5"></div>
+                        </div>
+                        <div class="rdc-table"></div>
+                        <div class="rdc-events"><a class="rdc-events_close"></a>
+                          <ul>
+                            <li data-date="10/28/2015" class="rdc-event">Event 1</li>
+                          </ul>
+                        </div>
+                        <div class="rdc-panel clearfix"><a class="rdc-next"></a><a class="rdc-prev"></a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- Page Footer-->
+    </div>
+</html>
+{% endblock %}
